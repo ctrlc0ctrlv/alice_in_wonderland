@@ -13,16 +13,18 @@
  *
  * @inherit std::exception
  */
-class IllegalDigitException : std::exception {
+class IllegalDigitException : std::exception
+{
 private:
-    const char* message;
+    const char *message;
 
 public:
-    explicit IllegalDigitException(const char* msg) : message(msg) {}
-    explicit IllegalDigitException(const std::string& msg) : message(msg.c_str()) {}
-    [[nodiscard]] const char* what() const _NOEXCEPT override {
+    explicit IllegalDigitException(const char *msg) : message(msg) {}
+    explicit IllegalDigitException(const std::string &msg) : message(msg.c_str()) {}
+    const char *what()
+    {
         return message;
     }
 };
 
-#endif //COUNTING_STARS_ILLEGALDIGITEXCEPTION_H
+#endif // COUNTING_STARS_ILLEGALDIGITEXCEPTION_H

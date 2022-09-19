@@ -13,16 +13,18 @@
  *
  * @inherit std::exception
  */
-class IllegalSignException : std::exception {
+class IllegalSignException : std::exception
+{
 private:
-    const char* message;
+    const char *message;
 
 public:
-    explicit IllegalSignException(const char* msg) : message(msg) {}
-    explicit IllegalSignException(const std::string& msg) : message(msg.c_str()) {}
-    [[nodiscard]] const char* what() const _NOEXCEPT override {
+    explicit IllegalSignException(const char *msg) : message(msg) {}
+    explicit IllegalSignException(const std::string &msg) : message(msg.c_str()) {}
+    const char *what()
+    {
         return message;
     }
 };
 
-#endif //COUNTING_STARS_ILLEGALSIGNEXCEPTION_H
+#endif // COUNTING_STARS_ILLEGALSIGNEXCEPTION_H

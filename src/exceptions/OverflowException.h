@@ -14,15 +14,18 @@
  *
  * @inherit std::exception
  */
-class OverflowException : std::exception {
+class OverflowException : std::exception
+{
 private:
-    const char* message;
+    const char *message;
+
 public:
-    explicit OverflowException(const char* msg) : message(msg) {}
-    explicit OverflowException(const std::string& msg) : message(msg.c_str()) {}
-    [[nodiscard]] const char* what() const _NOEXCEPT override {
+    explicit OverflowException(const char *msg) : message(msg) {}
+    explicit OverflowException(const std::string &msg) : message(msg.c_str()) {}
+    const char *what()
+    {
         return message;
     }
 };
 
-#endif //COUNTING_STARS_OVERFLOWEXCEPTION_H
+#endif // COUNTING_STARS_OVERFLOWEXCEPTION_H
