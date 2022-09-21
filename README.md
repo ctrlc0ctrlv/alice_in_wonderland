@@ -13,12 +13,14 @@ Some basic OOP C++ things implemented as a pet-project.
 ## Running all tests
 
 ```
-    make
+    make test
 ```
 
 ## Done:
 
 - Vector class (non-binary) implemented
+- Matrix class implemented
+- 
   
 ## TODO:
 
