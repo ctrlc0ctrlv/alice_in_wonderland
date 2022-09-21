@@ -1,9 +1,12 @@
 #include "../ValProxy.h"
 #include "gtest/gtest.h"
 
-class Proxy_test : public testing::Test {};
+class Proxy_test : public testing::Test
+{
+};
 
-TEST(Proxy_test, all_tests) {
+TEST(Proxy_test, all_tests)
+{
     std::map<int, double> m = {{3, 7.5}};
     ValProxy v(m, 3, 1e-7);
 

@@ -18,6 +18,7 @@
 #include <type_traits>
 
 #include "./../Rational_number/Rational_number.h"
+#include "./../TypeName/TypeName.h"
 
 /**
  * @brief Class that implements sparse vector using std::map as a container.

@@ -4,30 +4,40 @@
 #include <cmath>
 #include <iterator>
 
-template<typename C, typename K>
-class ValProxy {
+template <typename C, typename K>
+class ValProxy
+{
     using T = typename C::mapped_type;
+
 public:
-    ValProxy(C& cont_, K key_, double eps_) : cont(cont_), key(key_), eps(eps_) {}
-    void operator=(T new_val) {
-        if (std::abs(new_val) < eps) {
+    ValProxy(C &cont_, K key_, double eps_) : cont(cont_), key(key_), eps(eps_) {}
+    void operator=(T new_val)
+    {
+        if (std::abs(new_val) < eps)
+        {
             cont.erase(key);
-        } else {
+        }
+        else
+        {
             cont[key] = new_val;
         }
     }
-    operator T() const {
-        if (cont.find(key) != cont.end()) {
+    operator T() const
+    {
+        if (cont.find(key) != cont.end())
+        {
             return cont[key];
-        } else {
+        }
+        else
+        {
             return T(0);
         }
     }
+
 private:
-    C& cont;
+    C &cont;
     K key;
     double eps;
 };
-
 
 #endif // VALPROXY_HPP

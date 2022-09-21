@@ -1,11 +1,14 @@
 #include "../matrix.h"
 #include "gtest/gtest.h"
 
-#include<iostream>
+#include <iostream>
 
-class Matrix_test : testing::Test {};
+class Matrix_test : testing::Test
+{
+};
 
-TEST(Matrix_test, test_all) {
+TEST(Matrix_test, test_all)
+{
     Matrix<double> m(100, 100, 1e-6);
 
     m(3, 15) = 30.0;
@@ -13,13 +16,12 @@ TEST(Matrix_test, test_all) {
         {{6, 6}, 12.4},
         {{54, 34}, 45.45},
     });
-    ASSERT_EQ(m(3, 15),  30.0);
-    ASSERT_EQ(m(6, 6),  12.4);
-    ASSERT_EQ(m(54, 34),  45.45);
+    ASSERT_EQ(m(3, 15), 30.0);
+    ASSERT_EQ(m(6, 6), 12.4);
+    ASSERT_EQ(m(54, 34), 45.45);
 
     auto v = m + m;
-    ASSERT_EQ(v(3, 15),  2.0 * m(3, 15));
-
+    ASSERT_EQ(v(3, 15), 2.0 * m(3, 15));
 
     Matrix<double> m1(3, 2);
     m1.addValues({
@@ -39,7 +41,7 @@ TEST(Matrix_test, test_all) {
         {{3, 1}, 3.0},
         {{3, 2}, 5.0},
     });
-    ASSERT_EQ(m3,  m4);
+    ASSERT_EQ(m3, m4);
     Matrix<double> m5(3, 3);
     m5.addValues({
         {{3, 2}, 12.0},
@@ -47,6 +49,6 @@ TEST(Matrix_test, test_all) {
         {{2, 3}, 5.0},
     });
     m4.transpose();
-    ASSERT_EQ(m4,  m5);
-    std::cout << m4;
+    ASSERT_EQ(m4, m5);
+    // std::cout << m4;
 }

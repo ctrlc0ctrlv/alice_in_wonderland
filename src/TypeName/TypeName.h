@@ -6,34 +6,39 @@
 #include "../Rational_number/Rational_number.h"
 #include "../StringInt/StringInt.h"
 
-template<typename T>
-std::string get_type_name() {
+template <typename T>
+std::string get_type_name()
+{
     return typeid(T).name();
 }
 
-template<>
-std::string get_type_name<double>() {
+template <>
+std::string get_type_name<double>()
+{
     return "double";
 }
 
-template<>
-std::string get_type_name<float>() {
+template <>
+std::string get_type_name<float>()
+{
     return "float";
 }
 
-template<>
-std::string get_type_name<int>() {
+template <>
+std::string get_type_name<int>()
+{
     return "int";
 }
 
-template<>
-std::string get_type_name<Rational_number>() {
+template <>
+std::string get_type_name<Rational_number>()
+{
     return "rational";
 }
 
-
-template<>
-std::string get_type_name<StringInt>() {
+template <>
+std::string get_type_name<StringInt>()
+{
     return "string_int";
 }
 
