@@ -4,5 +4,4 @@
 /build/*
 /.vscode/*
 /.idea/*
-Makefile
 *.txt
