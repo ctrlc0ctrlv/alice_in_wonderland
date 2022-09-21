@@ -5,6 +5,7 @@
  */
 
 #include "../Rational_number.h"
+#include "../../TypeName/TypeName.h"
 #include "gtest/gtest.h"
 
 class Rational_number_constructor_test : public testing::Test { };
@@ -121,4 +122,9 @@ TEST(Rational_number_constructor_test, from_int)
     ASSERT_EQ(number.get_numerator().get_val(), "1") << "Got " << number.get_numerator().get_val() << ", should be 1";
     ASSERT_EQ(number.get_denominator().get_sign(), '+') << "Got " << number.get_denominator().get_sign() << ", should be +";
     ASSERT_EQ(number.get_denominator().get_val(), "1") << "Got " << number.get_denominator().get_val() << ", should be 1";
+}
+
+TEST(Rational_number_constructor_test, type_name) 
+{
+    ASSERT_EQ("rational", get_type_name<Rational_number>());
 }

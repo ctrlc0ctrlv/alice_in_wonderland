@@ -219,6 +219,23 @@ public:
      * @param filename file where to store vector
      */
     void to_file(std::string filename);
+
+    /**
+     * @brief Write vector to ostream
+     *
+     * @param out   Output stream
+     * @param m     Vector to be written
+     * 
+     * @return      std::ostream&
+     */
+    friend std::ostream& operator<<(std::ostream &out, const Vector<T> &m)
+    {
+        out << "Vector " << get_type_name<T>() << " " << m.N << " " << m.M << "\n";
+        for (auto [key, val] : m.data) {
+            out << key << " " << val << "\n";
+        }
+        return out;
+    }
 };
 
 //////////////////////////////////////////////////////////////////////////////////////////////
