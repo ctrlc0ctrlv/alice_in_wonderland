@@ -11,5 +11,7 @@
 #include "IllegalDigitException.h"
 #include "OutOfIntegerDivisionException.h"
 #include "OverflowException.h"
+#include "OutOfRange.h"
+#include "DimensionsMismatch.h"
 
 #endif //COUNTING_STARS_EXCEPTIONS_H

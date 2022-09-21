@@ -6,6 +6,7 @@
 
 #include "gtest/gtest.h"
 #include "../StringInt.h"
+#include "../../TypeName/TypeName.h"
 
 class StringInt_constructor_test : public testing::Test { };
 
@@ -57,4 +58,9 @@ TEST(StringInt_constructor_test, from_string_constructor_test)
     ASSERT_THROW(StringInt("+-123"), IllegalDigitException);
     ASSERT_THROW(StringInt("--123"), IllegalDigitException);
     ASSERT_THROW(StringInt("-123321123321123321L"), IllegalDigitException);
+}
+
+TEST(StringInt_constructor_test, type_name)
+{
+    ASSERT_EQ("string_int", get_type_name<StringInt>());
 }

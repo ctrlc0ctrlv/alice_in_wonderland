@@ -1,0 +1,5 @@
+if(EXISTS "/Users/mikhailpankin/Work/C++/alice_in_wonderland/build/Rational_number_constructor_test[1]_tests.cmake")
+  include("/Users/mikhailpankin/Work/C++/alice_in_wonderland/build/Rational_number_constructor_test[1]_tests.cmake")
+else()
+  add_test(Rational_number_constructor_test_NOT_BUILT Rational_number_constructor_test_NOT_BUILT)
+endif()
